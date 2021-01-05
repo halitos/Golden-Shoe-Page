@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Card, Button, ListGroup } from "react-bootstrap";
 import brown_shoe from "../images/brown_shoe.PNG";
 
@@ -15,7 +16,9 @@ const ProductCard = ({ products }) => {
               {product.price}
             </ListGroup.Item>
           </ListGroup>
-          <Button variant="dark">See Details</Button>
+          <Link to="/details">
+            <Button variant="dark">See Details</Button>
+          </Link>
         </Card.Body>
       </Card>
     </div>
