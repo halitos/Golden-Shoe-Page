@@ -17,7 +17,11 @@ const ProductCard = ({ products }) => {
             </ListGroup.Item>
           </ListGroup>
           <Link to="/details">
-            <Button variant="dark">See Details</Button>
+            {product.availability ? (
+              <Button variant="dark">See Details</Button>
+            ) : (
+              <div className="text-danger ">Out of stock</div>
+            )}
           </Link>
         </Card.Body>
       </Card>
