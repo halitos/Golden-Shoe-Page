@@ -3,6 +3,7 @@ import CarouselBox from "./Components/CarouselBox";
 import Footer from "./Components/Footer";
 import NavbarBrand from "./Components/NavbarBrand";
 import FormArea from "./Components/FormArea";
+import ProductCardsDisplay from "./Components/ProductCardsDisplay";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <FormArea />
         <CarouselBox />
       </div>
+      <ProductCardsDisplay />
       <Footer />
     </>
   );

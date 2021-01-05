@@ -3,7 +3,7 @@ import { Jumbotron, Container } from "react-bootstrap";
 
 function Footer() {
   return (
-    <Jumbotron fluid>
+    <Jumbotron fluid className="mb-0">
       <Container>
         <h3>This wil be Footer</h3>
         <p>
