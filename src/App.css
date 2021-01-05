@@ -1,3 +1,15 @@
 .App {
   text-align: center;
 }
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.carcontainer {
+  max-width: 100vh;
+}
+.caro {
+  max-height: 100%;
+}
