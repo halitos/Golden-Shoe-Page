@@ -3,10 +3,12 @@ import brown_shoe from "../images/brown_shoe.PNG";
 
 const SingleProductDetail = () => {
   return (
-    <div>
-      <h3>Fab Brown Shoe</h3>
+    <div className="container d-flex mx-auto my-5">
       <img src={brown_shoe} alt="sample shoe"></img>
-      <p>This is the sigle product details page to be worked on later...</p>
+      <div>
+        <h3>Fab Brown Shoe</h3>
+        <p>This is the sigle product details page to be worked on later...</p>
+      </div>
     </div>
   );
 };
