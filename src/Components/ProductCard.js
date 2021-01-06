@@ -10,7 +10,7 @@ const ProductCard = ({ products }) => {
   const imgSrcs = [brown_shoe, black_shoe, girls, boys];
 
   return products.map((product, index) => (
-    <div className="col-sm">
+    <div className="col-lg-3 col-md-6 col-sm-12 my-3">
       <Card>
         <Card.Img variant="top" src={imgSrcs[index]} />
         <Card.Body>

@@ -8,28 +8,20 @@
 }
 
 .carcontainer {
-  max-width: 80vh;
+  max-width: 100vh;
+  max-height: 50vh;
 }
 
 .size-select {
   width: 3rem;
   height: 3rem;
+  border: solid 0.15rem;
   border-radius: 50%;
 }
 
-/* .panel-container {
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-} */
-
-@media (max-width: 760px) {
+/* @media (max-width: 760px) {
   * {
     padding: 0px;
     margin: 0px;
   }
-}
+} */
