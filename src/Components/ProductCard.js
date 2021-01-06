@@ -2,12 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Card, Button, ListGroup } from "react-bootstrap";
 import brown_shoe from "../images/brown_shoe.PNG";
+import black_shoe from "../images/black_shoe.PNG";
+import girls from "../images/girls.PNG";
+import boys from "../images/boys.PNG";
 
 const ProductCard = ({ products }) => {
-  return products.map((product) => (
-    <div className="col-sm-3">
+  const imgSrcs = [brown_shoe, black_shoe, girls, boys];
+
+  return products.map((product, index) => (
+    <div className="col-sm">
       <Card>
-        <Card.Img variant="top" src={brown_shoe} />
+        <Card.Img variant="top" src={imgSrcs[index]} />
         <Card.Body>
           <Card.Title>{product.title}</Card.Title>
           <Card.Text>{product.text}</Card.Text>

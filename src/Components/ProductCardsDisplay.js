@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard";
 
 function ProductCardsDisplay() {
   return (
-    <div className="row m-3 ">
+    <div className="row m-3">
       <ProductCard products={products} />
     </div>
   );
