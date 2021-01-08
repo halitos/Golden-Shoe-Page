@@ -1,11 +1,12 @@
+const products = require("./products");
 const express = require("express");
 const path = require("path");
 const app = express();
 
 app.use(express.static(path.join(__dirname, "build")));
 
-app.get("/ping", (req, res) => {
-  return res.send("pong");
+app.get("/products", (req, res) => {
+  return res.json({ products });
 });
 
 app.get("/", (req, res) => {

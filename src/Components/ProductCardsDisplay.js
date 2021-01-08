@@ -1,6 +1,6 @@
 import React from "react";
-import { products } from "../../src/products";
 import ProductCard from "./ProductCard";
+const products = require("../../src/products");
 
 function ProductCardsDisplay() {
   return (

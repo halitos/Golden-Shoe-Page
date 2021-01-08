@@ -1,4 +1,4 @@
-export const products = [
+const products = [
   {
     id: 1,
     title: "Brown Men Shoe",
@@ -28,3 +28,5 @@ export const products = [
     availability: false,
   },
 ];
+
+module.exports = products;
