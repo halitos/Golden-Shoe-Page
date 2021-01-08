@@ -18,7 +18,7 @@ function App() {
         <NavbarBrand />
         <Switch>
           <Route exact path="/">
-            <div className="main">
+            <div className="main row ml-3">
               <FormArea />
               <CarouselBox />
             </div>

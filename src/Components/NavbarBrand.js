@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 import { RiShoppingCartLine } from "react-icons/ri";
 import AmountContext from "./Context";
 
@@ -26,11 +26,11 @@ const NavbarBrand = () => {
         </Link>{" "}
         Golden Shoe
       </Navbar.Brand>
-      <Nav className="w-100 d-flex justify-content-end">
+      {/* <Nav className="w-100 d-flex justify-content-end">
         <Nav.Link href="#home">About</Nav.Link>
         <Nav.Link href="#features">Products</Nav.Link>
         <Nav.Link href="#pricing">Contact</Nav.Link>
-      </Nav>
+      </Nav> */}
       <Navbar.Brand className="ml-5 ">
         <RiShoppingCartLine /> <span className="counter">{amount ? 1 : 0}</span>
       </Navbar.Brand>

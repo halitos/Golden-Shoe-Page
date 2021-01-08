@@ -42,26 +42,26 @@ const SingleProductDetail = () => {
               enlargedImagePosition: "over",
             }}
           />
-          <div className="sml-img-box d-flex p-1">
+          <div className="sml-img-box d-flex p-1 ">
             <img
               src={shoeImgSrcs[0]}
               alt="sample shoe"
-              className="w-25 m"
+              className="w-25 border border-secondary rounded "
             ></img>
             <img
               src={shoeImgSrcs[1]}
               alt="sample shoe"
-              className="w-25 mx-1"
+              className="w-25 border border-secondary rounded mx-1"
             ></img>
             <img
               src={shoeImgSrcs[2]}
               alt="sample shoe"
-              className="w-25 mx"
+              className="w-25 border border-secondary rounded"
             ></img>
             <img
               src={shoeImgSrcs[3]}
               alt="sample shoe"
-              className="w-25 mx-1"
+              className="w-25 border border-secondary rounded mx-1"
             ></img>
           </div>
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { Form, FormControl, Button } from "react-bootstrap";
 const FormArea = () => {
   return (
-    <Form className="ml-4 mt-3 p-2 w-25 bg-light">
+    <Form className="mt-3 p-2 col-lg-3 col-md-8 col-sm-10 mx-auto bg-light">
       <Form inline>
         <Form.Label className="my-3">Search for keywords</Form.Label>
         <FormControl type="text" placeholder="Search" className=" mr-sm-2" />
