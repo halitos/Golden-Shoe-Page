@@ -42,27 +42,16 @@ const SingleProductDetail = () => {
               enlargedImagePosition: "over",
             }}
           />
-          <div className="sml-img-box d-flex p-1 ">
-            <img
-              src={shoeImgSrcs[0]}
-              alt="sample shoe"
-              className="w-25 border border-secondary rounded "
-            ></img>
-            <img
-              src={shoeImgSrcs[1]}
-              alt="sample shoe"
-              className="w-25 border border-secondary rounded mx-1"
-            ></img>
-            <img
-              src={shoeImgSrcs[2]}
-              alt="sample shoe"
-              className="w-25 border border-secondary rounded"
-            ></img>
-            <img
-              src={shoeImgSrcs[3]}
-              alt="sample shoe"
-              className="w-25 border border-secondary rounded mx-1"
-            ></img>
+          <div className="sml-img-box d-flex flex-direction-row p-1 ">
+            {shoeImgSrcs.map((shoeImg) => {
+              return (
+                <img
+                  src={shoeImg}
+                  alt="sample shoe"
+                  className="w-25 h-100 border border-secondary rounded mr-1"
+                ></img>
+              );
+            })}
           </div>
         </div>
         <div className="col-lg-4 col-sm-12">
