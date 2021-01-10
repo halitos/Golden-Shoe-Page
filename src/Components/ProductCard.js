@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Card, Button, ListGroup } from "react-bootstrap";
 import brown_shoe from "../images/brown_shoe.PNG";
-import black_shoe from "../images/black_shoe.PNG";
+import black_shoe from "../images/black_shoe.png";
 import girls from "../images/girls.PNG";
 import boys from "../images/boys.PNG";
 
@@ -25,7 +25,7 @@ const ProductCard = ({ products }) => {
             {product.availability ? (
               <Button variant="dark">See Details</Button>
             ) : (
-              <div className="text-danger ">Out of stock</div>
+              <button className="btn btn-sm text-danger ">Out of stock</button>
             )}
           </Link>
         </Card.Body>

@@ -2,16 +2,14 @@
   text-align: center;
 }
 
+/* #root {
+  background-color: rgb(194, 197, 197);
+} */
+
 .main {
   display: flex;
   flex-wrap: wrap;
 }
-
-/* .caro {
-  display: inline;
-  width: 80%;
-  height: auto;
-} */
 
 .size-select {
   width: 3rem;
@@ -20,6 +18,19 @@
   border-radius: 50%;
 }
 
+a {
+  color: coral;
+  text-decoration: none;
+}
+
+a :hover {
+  text-decoration: none;
+}
+
 .add-btn {
   width: 8rem;
+}
+
+ul li {
+  list-style: none;
 }

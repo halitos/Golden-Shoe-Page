@@ -42,7 +42,7 @@ const SingleProductDetail = () => {
               enlargedImagePosition: "over",
             }}
           />
-          <div className="sml-img-box d-flex flex-direction-row p-1 ">
+          <div className="sml-img-box d-flex flex-direction-row p-1 mr-2">
             {shoeImgSrcs.map((shoeImg) => {
               return (
                 <img

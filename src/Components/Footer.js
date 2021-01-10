@@ -1,16 +1,30 @@
 import React from "react";
-import { Jumbotron, Container } from "react-bootstrap";
+import { Jumbotron } from "react-bootstrap";
+import { FaGithub, FaRegQuestionCircle } from "react-icons/fa";
 
 function Footer() {
   return (
-    <Jumbotron fluid className="mb-0">
-      <Container>
-        <h3>This wil be Footer</h3>
-        <p>
-          This is a modified jumbotron that occupies the entire horizontal space
-          of its parent.
-        </p>
-      </Container>
+    <Jumbotron fluid className="mt-4 mb-0 p-4 bg-light text-center rounded">
+      <h5>
+        Created by <b>AND Digital</b> &copy; 2020
+      </h5>
+      <p>Halit Oskan</p>
+      <ul className="d-flex justify-content-around">
+        <li>
+          <FaGithub size={56} />
+        </li>
+        <li>
+          <FaRegQuestionCircle size={56} />
+        </li>
+      </ul>
+      <p>
+        We're a tech company focused on accelerating digital delivery. We do
+        that by building both better products AND stronger teams.
+      </p>
+      <p>
+        <a href="https://and.digital/">AND Digital</a> We accelerate digital
+        capabilities.
+      </p>
     </Jumbotron>
   );
 }

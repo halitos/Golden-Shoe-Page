@@ -13,7 +13,10 @@ function SizeButtons({ handleShow }) {
     <div className="container single-sizebox">
       <h3>Fab Brown Shoe</h3>
       <p className="lead">£125</p>
-      <p>This is the sigle product details page to be worked on later...</p>
+      <p>
+        Have a closer look at the diefferent pictures of product and use our
+        Size Guide to help you picking the right size for you
+      </p>
       <span className="lead mr-5">Select Size</span>
       <button className="btn btn-sm text-success ml-5" onClick={handleShow}>
         Size guide

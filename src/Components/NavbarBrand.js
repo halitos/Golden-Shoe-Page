@@ -14,17 +14,13 @@ const NavbarBrand = () => {
       variant="dark"
       className="d-flex justify-content-between px-5"
     >
-      <Navbar.Brand href="#home" className="d-flex py-3">
+      <Navbar.Brand href="#home" className="d-flex pt-3 pb-1">
         <Link to="/">
-          <img
-            alt=""
-            src={logo}
-            width="auto"
-            height="50"
-            className="d-inline-block align-top mr-5 rounded"
-          />
+          <div className="d-flex align-items-center flex-column">
+            <img alt="" src={logo} width="auto" height="60" className="" />
+            Golden Shoe
+          </div>
         </Link>{" "}
-        Golden Shoe
       </Navbar.Brand>
       {/* <Nav className="w-100 d-flex justify-content-end">
         <Nav.Link href="#home">About</Nav.Link>
