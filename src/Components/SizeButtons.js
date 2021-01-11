@@ -15,7 +15,7 @@ function SizeButtons({ handleShow }) {
       <p className="lead">£125</p>
       <p>
         Have a closer look at the diefferent pictures of product and use our
-        Size Guide to help you picking the right size for you
+        Size Guide to help you pick the right size for you
       </p>
       <span className="lead mr-5">Select Size</span>
       <button className="btn btn-sm text-success ml-5" onClick={handleShow}>

@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-/* #root {
-  background-color: rgb(194, 197, 197);
-} */
-
 .main {
   display: flex;
   flex-wrap: wrap;
@@ -24,6 +20,7 @@ a {
 }
 
 a :hover {
+  color: rgb(18, 184, 120);
   text-decoration: none;
 }
 
@@ -33,4 +30,8 @@ a :hover {
 
 ul li {
   list-style: none;
+}
+
+.logo {
+  font-size: 4rem;
 }

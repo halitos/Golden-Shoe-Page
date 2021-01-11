@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-import logo from "../images/logo.png";
+// import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 import { Navbar } from "react-bootstrap";
 import { RiShoppingCartLine } from "react-icons/ri";
+import { GiSonicShoes } from "react-icons/gi";
 import AmountContext from "./Context";
 
 const NavbarBrand = () => {
@@ -17,7 +18,8 @@ const NavbarBrand = () => {
       <Navbar.Brand href="#home" className="d-flex pt-3 pb-1">
         <Link to="/">
           <div className="d-flex align-items-center flex-column">
-            <img alt="" src={logo} width="auto" height="60" className="" />
+            {/* <img alt="" src={logo} width="auto" height="60" className="" /> */}
+            <GiSonicShoes className="logo" />
             Golden Shoe
           </div>
         </Link>{" "}
