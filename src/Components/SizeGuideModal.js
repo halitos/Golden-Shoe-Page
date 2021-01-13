@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
-import sizeguide from "../images/sizeguide.PNG";
+import sizeguide from "../images/shoesize.png";
 
 function SizeGuideModal({ show, handleClose, handleShow }) {
   return (
