@@ -1,18 +1,9 @@
 const express = require("express");
+const db = require("./dbConnection");
 const products = require("../src/products");
 const path = require("path");
 const app = express();
-
-const { Pool } = require("pg");
 app.use(express.json());
-
-const db = new Pool({
-  user: "44788",
-  host: "localhost",
-  database: "golden_shoe",
-  password: "*****",
-  port: 5432,
-});
 
 app.get("/prods", function (req, res) {
   db.query(`SELECT * FROM products where id=1`)
