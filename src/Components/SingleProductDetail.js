@@ -43,9 +43,10 @@ const SingleProductDetail = () => {
             }}
           />
           <div className="sml-img-box d-flex flex-direction-row p-1 mr-2">
-            {shoeImgSrcs.map((shoeImg) => {
+            {shoeImgSrcs.map((shoeImg, index) => {
               return (
                 <img
+                  key={index}
                   src={shoeImg}
                   alt="sample shoe"
                   className="w-25 h-100 border border-secondary rounded mr-1"

@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-// import logo from "../images/logo.png";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "react-bootstrap";
 import { RiShoppingCartLine } from "react-icons/ri";
@@ -8,6 +7,17 @@ import AmountContext from "./Context";
 
 const NavbarBrand = () => {
   const { amount } = useContext(AmountContext);
+  const [count, setCount] = useState("");
+
+  useEffect(() => {
+    fetch("/prods")
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        setCount(`Amount = ${res[0].quantity}`);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Navbar
@@ -24,13 +34,12 @@ const NavbarBrand = () => {
           </div>
         </Link>{" "}
       </Navbar.Brand>
-      {/* <Nav className="w-100 d-flex justify-content-end">
-        <Nav.Link href="#home">About</Nav.Link>
-        <Nav.Link href="#features">Products</Nav.Link>
-        <Nav.Link href="#pricing">Contact</Nav.Link>
-      </Nav> */}
       <Navbar.Brand className="ml-5 ">
-        <RiShoppingCartLine /> <span className="counter">{amount ? 1 : 0}</span>
+        <RiShoppingCartLine />{" "}
+        <span className="counter">
+          {amount ? 1 : 0}
+          {count}
+        </span>
       </Navbar.Brand>
     </Navbar>
   );
