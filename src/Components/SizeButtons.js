@@ -14,10 +14,7 @@ function SizeButtons({ handleShow }) {
       .then(() => {
         fetch("/prods")
           .then((res) => res.json())
-          .then((res) => {
-            console.log(res[0].quantity);
-            setAmount(res[0].quantity);
-          });
+          .then((res) => setAmount(res[0].quantity));
       })
       .catch((e) => console.error(e));
 
@@ -33,10 +30,7 @@ function SizeButtons({ handleShow }) {
       .then(() => {
         fetch("/prods")
           .then((res) => res.json())
-          .then((res) => {
-            console.log(res[0].quantity);
-            setAmount(res[0].quantity);
-          });
+          .then((res) => setAmount(res[0].quantity));
       })
       .catch((e) => console.error(e));
 

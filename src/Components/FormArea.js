@@ -33,16 +33,6 @@ const FormArea = () => {
             <option>Girls</option>
           </Form.Control>
         </Form.Group>
-        {/* <Form.Group controlId="exampleForm.ControlSelect2">
-        <Form.Label>Multiple select</Form.Label>
-        <Form.Control as="select" multiple>
-          <option></option>
-          <option>Women</option>
-          <option>Men</option>
-          <option>Boys</option>
-          <option>Girls</option>
-        </Form.Control>
-      </Form.Group> */}
       </Form>
     </div>
   );
