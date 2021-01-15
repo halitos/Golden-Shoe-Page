@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Card, Button, ListGroup } from "react-bootstrap";
 import brown_shoe from "../images/brown_shoe.PNG";
@@ -6,8 +6,17 @@ import black_shoe from "../images/blackshoe.png";
 import girls from "../images/girls.PNG";
 import boys from "../images/boys.PNG";
 
-const ProductCard = ({ prods }) => {
+const ProductCard = () => {
   const imgSrcs = [brown_shoe, black_shoe, girls, boys];
+  const [prods, setProds] = useState();
+
+  useEffect(() => {
+    fetch("/products")
+      .then((res) => res.json())
+      .then((res) => {
+        setProds(res);
+      });
+  }, []);
 
   return prods !== undefined
     ? prods.products.map((product, index) => (

@@ -1,8 +1,10 @@
 import React from "react";
 
 const AmountContext = React.createContext({
-  amount: false,
+  count: 0,
+  amount: 0,
   setAmount: () => {},
+  setCount: () => {},
 });
 
 export default AmountContext;

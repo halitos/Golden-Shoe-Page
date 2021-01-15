@@ -1,12 +1,54 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import AmountContext from "./Context";
 
 function SizeButtons({ handleShow }) {
-  const { amount, setAmount } = useContext(AmountContext);
+  const { count, amount, setAmount, setCount } = useContext(AmountContext);
+  const [select, setSelect] = useState(false);
+
+  function incrData() {
+    fetch("/prods/increment-amount", {
+      method: "PUT",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({}),
+    })
+      .then(() => {
+        fetch("/prods")
+          .then((res) => res.json())
+          .then((res) => {
+            console.log(res[0].quantity);
+            setAmount(res[0].quantity);
+          });
+      })
+      .catch((e) => console.error(e));
+
+    setCount(count - 1);
+  }
+
+  function decrData() {
+    fetch("/prods/decr-amount", {
+      method: "PUT",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(),
+    })
+      .then(() => {
+        fetch("/prods")
+          .then((res) => res.json())
+          .then((res) => {
+            console.log(res[0].quantity);
+            setAmount(res[0].quantity);
+          });
+      })
+      .catch((e) => console.error(e));
+
+    setCount(count + 1);
+  }
 
   function handleClick() {
-    !amount ? setAmount(true) : setAmount(false);
-    console.log(amount);
+    if (!select) {
+      setSelect(true);
+    } else {
+      setSelect(false);
+    }
   }
 
   return (
@@ -32,8 +74,11 @@ function SizeButtons({ handleShow }) {
       </div>
       <div className="container mb-4">
         <button
+          onClick={handleClick}
           className={
-            amount
+            select
+              ? "size-select btn btn-sm btn-success m-3"
+              : amount < 1
               ? "size-select btn btn-sm border-danger m-3"
               : "size-select btn btn-sm border-success m-3 "
           }
@@ -45,9 +90,29 @@ function SizeButtons({ handleShow }) {
         </button>
         <button className="size-select btn btn-sm border-danger m-3">10</button>
       </div>
-      <button className="btn btn-secondary add-btn" onClick={handleClick}>
-        {!amount ? "Add to Basket" : "Remove"}
-      </button>
+      <div className="container btn-box">
+        <button
+          className={
+            amount < 1
+              ? "btn btn-danger mx-2 add-btn"
+              : "btn btn-secondary mx-2 add-btn"
+          }
+          onClick={decrData}
+        >
+          {amount > 0 ? "Add" : "Out of Stock"}
+        </button>
+        <button
+          className={count < 1 ? "d-none" : "btn btn-secondary ml-3 add-btn"}
+          onClick={incrData}
+        >
+          Remove
+        </button>
+      </div>
+      {select && amount > 0 && (
+        <p className="mx-auto my-3 text-info">
+          {`Only ${amount} left in stock`}
+        </p>
+      )}
     </div>
   );
 }

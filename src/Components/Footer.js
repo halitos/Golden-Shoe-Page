@@ -6,7 +6,7 @@ function Footer() {
   return (
     <Jumbotron fluid className="mt-4 mb-0 p-4 bg-light text-center rounded">
       <h5>
-        Created by <b>AND Digital</b> &copy; 2020
+        Created by <b>AND Digital</b> &copy; 2021
       </h5>
       <p>Halit Oskan</p>
       <ul className="d-flex justify-content-around">

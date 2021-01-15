@@ -1,9 +1,11 @@
 const express = require("express");
 const db = require("./dbConnection");
 const products = require("../src/products");
-const path = require("path");
+// const path = require("path");
 const app = express();
 app.use(express.json());
+
+// ****** Get all Products ********
 
 app.get("/prods", function (req, res) {
   db.query(`SELECT * FROM products where id=1`)
@@ -13,13 +15,13 @@ app.get("/prods", function (req, res) {
     .catch((err) => res.status(500).json({ error: err }));
 });
 
-app.put("/prods/:id/increment-amount", (req, res, next) => {
-  let prodId = req.params.id;
-  let updateSql =
-    "update products set quantity = quantity + 1 where id = $1 returning quantity";
-  db.query(updateSql, [prodId])
+// ********* Add to basket - Decrement amount **********
+
+app.put("/prods/decr-amount", (req, res, next) => {
+  let updateSql = "update products set quantity = quantity - 1";
+  db.query(updateSql, [])
     .then((result) => {
-      res.status(200).json(result.rows[0].views);
+      res.status(200).json(result.rows[0].quantity);
     })
     .catch((e) => {
       console.log(e.stack);
@@ -27,15 +29,31 @@ app.put("/prods/:id/increment-amount", (req, res, next) => {
     });
 });
 
-app.use(express.static(path.join(__dirname, "build")));
+// ******** Remove from basket - Increment Amount **********
+
+app.put("/prods/increment-amount", (req, res, next) => {
+  let updateSql = "update products set quantity = quantity + 1";
+  db.query(updateSql, [])
+    .then((result) => {
+      res.status(200).json(result.rows[0].quantity);
+    })
+    .catch((e) => {
+      console.log(e.stack);
+      next(e);
+    });
+});
 
 app.get("/products", (req, res) => {
   return res.json({ products });
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
+// ************ For Production *****************
+
+// app.use(express.static(path.join(__dirname, "build")));
+
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
 
 const PORT = process.env.PORT || 8080;
 
