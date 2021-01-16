@@ -22,19 +22,23 @@ function SizeButtons({ handleShow }) {
   }
 
   function decrData() {
-    fetch("/prods/decr-amount", {
-      method: "PUT",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify(),
-    })
-      .then(() => {
-        fetch("/prods")
-          .then((res) => res.json())
-          .then((res) => setAmount(res[0].quantity));
+    if (amount > 0) {
+      fetch("/prods/decr-amount", {
+        method: "PUT",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(),
       })
-      .catch((e) => console.error(e));
+        .then(() => {
+          fetch("/prods")
+            .then((res) => res.json())
+            .then((res) => setAmount(res[0].quantity));
+        })
+        .catch((e) => console.error(e));
 
-    setCount(count + 1);
+      setCount(count + 1);
+    } else {
+      alert("Sorry, Out of Stock");
+    }
   }
 
   function handleClick() {
@@ -88,7 +92,7 @@ function SizeButtons({ handleShow }) {
         <button
           className={
             amount < 1
-              ? "btn btn-danger mx-2 add-btn"
+              ? "btn btn-danger mx-2 bton-lg"
               : "btn btn-secondary mx-2 add-btn"
           }
           onClick={decrData}
@@ -104,7 +108,7 @@ function SizeButtons({ handleShow }) {
       </div>
       {select && amount > 0 && (
         <p className="mx-auto my-3 text-info">
-          {`Only ${amount} left in stock`}
+          {`Only ${amount} left in stock!`}
         </p>
       )}
     </div>

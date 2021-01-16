@@ -10,24 +10,26 @@ function OutOfStockPage({ imgSrc }) {
   const imgSrcs = [brown_shoe, black_shoe, girls, boys];
 
   return (
-    <div className="container d-flex">
-      <ReactImageMagnify
-        {...{
-          smallImage: {
-            alt: "sample shoe",
-            isFluidWidth: true,
-            src: imgSrcs[imgSrc],
-          },
-          largeImage: {
-            src: imgSrcs[imgSrc],
-            width: 3000,
-            height: 2000,
-          },
-          isHintEnabled: true,
-          shouldHideHintAfterFirstActivation: false,
-          enlargedImagePosition: "over",
-        }}
-      />
+    <div className="container row my-4 mx-2 ">
+      <div className="col-lg-7 col-md-12 col-sm-12 mx-auto mb-3">
+        <ReactImageMagnify
+          {...{
+            smallImage: {
+              alt: "sample shoe",
+              isFluidWidth: true,
+              src: imgSrcs[imgSrc],
+            },
+            largeImage: {
+              src: imgSrcs[imgSrc],
+              width: 3000,
+              height: 2000,
+            },
+            isHintEnabled: true,
+            shouldHideHintAfterFirstActivation: false,
+            enlargedImagePosition: "over",
+          }}
+        />
+      </div>
 
       <div className="mx-auto mt-2 p-3">
         <h2>{products[imgSrc].title}</h2>

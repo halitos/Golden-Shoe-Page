@@ -35,3 +35,14 @@ ul li {
 .logo {
   font-size: 4rem;
 }
+
+.card-img {
+  height: 46%;
+}
+
+@media (max-width: 1150px) {
+  .card-img {
+    width: 100%;
+    height: auto;
+  }
+}

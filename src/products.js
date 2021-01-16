@@ -2,14 +2,14 @@ const products = [
   {
     id: 0,
     title: "Brown Men Shoe",
-    text: "Smart looking and very comfy goes well both with casual and smart",
+    text: "Smart looking and comfortable casual or smart",
     price: "£125.00",
     availability: true,
   },
   {
     id: 1,
     title: "Black Women Shoe",
-    text: "Black classy women's shoe perfect for work and very comfortable",
+    text: "Classy black shoe perfect for work and very comfortable",
     price: "£85.00",
     availability: false,
   },
