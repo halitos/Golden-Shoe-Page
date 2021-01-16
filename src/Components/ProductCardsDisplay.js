@@ -2,10 +2,10 @@ import React from "react";
 import ProductCard from "./ProductCard";
 const products = require("../../src/products");
 
-function ProductCardsDisplay() {
+function ProductCardsDisplay({ setImgSrc }) {
   return (
     <div className="row m-3">
-      <ProductCard products={products} />
+      <ProductCard products={products} setImgSrc={setImgSrc} />
     </div>
   );
 }

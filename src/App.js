@@ -11,6 +11,7 @@ import AmountContext from "./Components/Context";
 import OutOfStockPage from "./Components/OutOfStockPage";
 
 function App() {
+  const [imgSrc, setImgSrc] = useState();
   const [amount, setAmount] = useState();
   const [count, setCount] = useState(0);
   const value = { amount, setAmount, count, setCount };
@@ -28,20 +29,19 @@ function App() {
     <>
       <AmountContext.Provider value={value}>
         <NavbarBrand />
-        {/* {prods !== undefined ? <div>{prods.products[0].title}</div> : "nothing"} */}
         <Switch>
           <Route exact path="/">
             <div className="main row ml-3">
               <FormArea />
               <CarouselBox />
             </div>
-            <ProductCardsDisplay />
+            <ProductCardsDisplay setImgSrc={setImgSrc} />
           </Route>
           <Route path="/details">
             <SingleProductDetail />
           </Route>
           <Route path="/out-of-stock">
-            <OutOfStockPage />
+            <OutOfStockPage imgSrc={imgSrc} />
           </Route>
         </Switch>
         <Footer />

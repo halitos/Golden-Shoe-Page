@@ -1,21 +1,25 @@
 import React from "react";
 import products from "../products";
-import black_shoe from "../images/blackshoe.png";
 import ReactImageMagnify from "react-image-magnify";
+import brown_shoe from "../images/brown_shoe.PNG";
+import black_shoe from "../images/blackshoe.png";
+import girls from "../images/girls.PNG";
+import boys from "../images/boys.PNG";
 
-function OutOfStockPage() {
+function OutOfStockPage({ imgSrc }) {
+  const imgSrcs = [brown_shoe, black_shoe, girls, boys];
+
   return (
     <div className="container d-flex">
-      {/* <img src={black_shoe} alt="black shoe" className="w-50"></img> */}
       <ReactImageMagnify
         {...{
           smallImage: {
             alt: "sample shoe",
             isFluidWidth: true,
-            src: black_shoe,
+            src: imgSrcs[imgSrc],
           },
           largeImage: {
-            src: black_shoe,
+            src: imgSrcs[imgSrc],
             width: 3000,
             height: 2000,
           },
@@ -26,8 +30,8 @@ function OutOfStockPage() {
       />
 
       <div className="mx-auto mt-2 p-3">
-        <h2>{products[1].title}</h2>
-        <p>{products[1].text}</p>
+        <h2>{products[imgSrc].title}</h2>
+        <p>{products[imgSrc].text}</p>
         <p className="lead text-danger">Out of Stock</p>
       </div>
     </div>

@@ -6,7 +6,7 @@ import black_shoe from "../images/blackshoe.png";
 import girls from "../images/girls.PNG";
 import boys from "../images/boys.PNG";
 
-const ProductCard = () => {
+const ProductCard = ({ setImgSrc }) => {
   const imgSrcs = [brown_shoe, black_shoe, girls, boys];
   const [prods, setProds] = useState();
 
@@ -18,9 +18,16 @@ const ProductCard = () => {
       });
   }, []);
 
+  const handleClick = (e) => {
+    setImgSrc(e.target.value);
+  };
+
   return prods !== undefined
     ? prods.products.map((product, index) => (
-        <div className="col-lg-3 col-md-6 col-sm-10 my-3 mx-auto d-flex align-items-stretch">
+        <div
+          key={product.id}
+          className="col-lg-3 col-md-6 col-sm-10 my-3 mx-auto d-flex align-items-stretch"
+        >
           <Card>
             <Card.Img variant="top" src={imgSrcs[index]} />
             <Card.Body>
@@ -35,7 +42,11 @@ const ProductCard = () => {
                 {product.availability ? (
                   <Button variant="dark">See Details</Button>
                 ) : (
-                  <button className="btn btn-sm text-danger ">
+                  <button
+                    className="btn btn-sm text-danger"
+                    onClick={handleClick}
+                    value={product.id}
+                  >
                     Out of stock
                   </button>
                 )}
