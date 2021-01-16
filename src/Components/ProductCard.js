@@ -31,7 +31,7 @@ const ProductCard = () => {
                   {product.price}
                 </ListGroup.Item>
               </ListGroup>
-              <Link to="/details">
+              <Link to={product.availability ? "/details" : "/out-of-stock"}>
                 {product.availability ? (
                   <Button variant="dark">See Details</Button>
                 ) : (

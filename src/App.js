@@ -8,6 +8,7 @@ import ProductCardsDisplay from "./Components/ProductCardsDisplay";
 import SingleProductDetail from "./Components/SingleProductDetail";
 import { Route, Switch } from "react-router-dom";
 import AmountContext from "./Components/Context";
+import OutOfStockPage from "./Components/OutOfStockPage";
 
 function App() {
   const [amount, setAmount] = useState();
@@ -38,6 +39,9 @@ function App() {
           </Route>
           <Route path="/details">
             <SingleProductDetail />
+          </Route>
+          <Route path="/out-of-stock">
+            <OutOfStockPage />
           </Route>
         </Switch>
         <Footer />
