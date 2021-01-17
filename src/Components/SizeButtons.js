@@ -1,9 +1,11 @@
 import React, { useContext, useState } from "react";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import AmountContext from "./Context";
 
 function SizeButtons({ handleShow }) {
   const { count, amount, setAmount, setCount } = useContext(AmountContext);
   const [select, setSelect] = useState(false);
+  const [alert, setAlert] = useState(false);
 
   function incrData() {
     fetch("/prods/increment-amount", {
@@ -19,6 +21,7 @@ function SizeButtons({ handleShow }) {
       .catch((e) => console.error(e));
 
     setCount(count - 1);
+    setAlert(false);
   }
 
   function decrData() {
@@ -37,7 +40,7 @@ function SizeButtons({ handleShow }) {
 
       setCount(count + 1);
     } else {
-      alert("Sorry, Out of Stock");
+      setAlert(true);
     }
   }
 
@@ -48,6 +51,12 @@ function SizeButtons({ handleShow }) {
       setSelect(false);
     }
   }
+
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Out of Stock
+    </Tooltip>
+  );
 
   return (
     <div className="container single-sizebox">
@@ -62,9 +71,15 @@ function SizeButtons({ handleShow }) {
         Size guide
       </button>
       <div className="container mt-2">
-        <button className="size-select btn btn-sm border-danger m-3">
-          7.5
-        </button>
+        <OverlayTrigger
+          placement="right"
+          delay={{ show: 250, hide: 400 }}
+          overlay={renderTooltip}
+        >
+          <button className="size-select btn btn-sm border-danger m-3">
+            7.5
+          </button>
+        </OverlayTrigger>
         <button className="size-select btn btn-sm border-danger m-3 ">8</button>
         <button className="size-select btn btn-sm border-danger m-3">
           8.5
@@ -110,6 +125,11 @@ function SizeButtons({ handleShow }) {
         <p className="mx-auto my-3 text-info">
           {`Only ${amount} left in stock!`}
         </p>
+      )}
+      {alert && (
+        <div className=" text-danger border border-danger rounded text-center p-1 mt-2 w-75">
+          You added the last product in stock
+        </div>
       )}
     </div>
   );
