@@ -4,7 +4,7 @@ const FormArea = () => {
   return (
     <div className="mt-3 pl-3 col-lg-4 col-md-10 col-sm-10 mx-auto ">
       <div className="py-2">
-        <h2>Awesome online shoe shop</h2>
+        <h2>Online Shoe Shop</h2>
         <p className="lead">
           Sorry we have only brown men shoes left in stock but trying to bring
           more products soon...

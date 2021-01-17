@@ -20,7 +20,6 @@ function App() {
     fetch("/products")
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         setAmount(res[0].quantity);
       });
   });
