@@ -1,7 +1,7 @@
 const express = require("express");
 const db = require("./dbConnection");
 const products = require("../src/products");
-// const path = require("path");
+const path = require("path");
 const app = express();
 app.use(express.json());
 
@@ -49,11 +49,13 @@ app.get("/products", (req, res) => {
 
 // ************ For Production *****************
 
-// app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "build")));
 
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "build", "index.html"));
-// });
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
+// **********************************************
 
 const PORT = process.env.PORT || 8080;
 
