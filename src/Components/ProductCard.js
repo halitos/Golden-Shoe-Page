@@ -11,7 +11,7 @@ const ProductCard = ({ setImgSrc }) => {
   const [prods, setProds] = useState();
 
   useEffect(() => {
-    fetch("/products")
+    fetch("/mock-products")
       .then((res) => res.json())
       .then((res) => {
         setProds(res);

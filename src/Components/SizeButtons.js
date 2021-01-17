@@ -8,13 +8,13 @@ function SizeButtons({ handleShow }) {
   const [alert, setAlert] = useState(false);
 
   function incrData() {
-    fetch("/prods/increment-amount", {
+    fetch("/products/increment-amount", {
       method: "PUT",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({}),
     })
       .then(() => {
-        fetch("/prods")
+        fetch("/products")
           .then((res) => res.json())
           .then((res) => setAmount(res[0].quantity));
       })
@@ -26,13 +26,13 @@ function SizeButtons({ handleShow }) {
 
   function decrData() {
     if (amount > 0) {
-      fetch("/prods/decr-amount", {
+      fetch("/products/decrement-amount", {
         method: "PUT",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(),
       })
         .then(() => {
-          fetch("/prods")
+          fetch("/products")
             .then((res) => res.json())
             .then((res) => setAmount(res[0].quantity));
         })
@@ -127,8 +127,8 @@ function SizeButtons({ handleShow }) {
         </p>
       )}
       {alert && (
-        <div className=" text-danger border border-danger rounded text-center p-1 mt-2 w-75">
-          You added the last product in stock
+        <div className=" text-danger border border-danger rounded text-center p-1 mt-2 mx-auto w-75">
+          Last product is in your basket
         </div>
       )}
     </div>

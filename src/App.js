@@ -17,7 +17,7 @@ function App() {
   const value = { amount, setAmount, count, setCount };
 
   useEffect(() => {
-    fetch("/prods")
+    fetch("/products")
       .then((res) => res.json())
       .then((res) => {
         console.log(res);

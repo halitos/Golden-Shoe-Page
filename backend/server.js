@@ -7,7 +7,7 @@ app.use(express.json());
 
 // ****** Get all Products ********
 
-app.get("/prods", function (req, res) {
+app.get("/products", function (req, res) {
   db.query(`SELECT * FROM products where id=1`)
     .then((result) => {
       if (result) res.json(result.rows);
@@ -17,7 +17,7 @@ app.get("/prods", function (req, res) {
 
 // ********* Add to basket - Decrement amount **********
 
-app.put("/prods/decr-amount", (req, res, next) => {
+app.put("/products/decrement-amount", (req, res, next) => {
   let updateSql = "update products set quantity = quantity - 1";
   db.query(updateSql, [])
     .then((result) => {
@@ -31,7 +31,7 @@ app.put("/prods/decr-amount", (req, res, next) => {
 
 // ******** Remove from basket - Increment Amount **********
 
-app.put("/prods/increment-amount", (req, res, next) => {
+app.put("/products/increment-amount", (req, res, next) => {
   let updateSql = "update products set quantity = quantity + 1";
   db.query(updateSql, [])
     .then((result) => {
@@ -43,7 +43,7 @@ app.put("/prods/increment-amount", (req, res, next) => {
     });
 });
 
-app.get("/products", (req, res) => {
+app.get("/mock-products", (req, res) => {
   return res.json({ products });
 });
 
