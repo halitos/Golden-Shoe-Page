@@ -2,7 +2,7 @@ import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import sizeguide from "../images/shoesize.png";
 
-function SizeGuideModal({ show, handleClose, handleShow }) {
+function SizeGuideModal({ show, handleClose }) {
   return (
     <>
       <Modal show={show} onHide={handleClose}>
